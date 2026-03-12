@@ -1,6 +1,9 @@
-def add(a, b):
-    return a + b
+import time
 
+def add(a,b):
+    return a+b
 
-if __name__ == "__main__":
-    print(add(2, 3))
+print(add(2,3))
+
+while True:
+    time.sleep(10)
