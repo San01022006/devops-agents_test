@@ -1,6 +1,10 @@
-import time
+from flask import Flask
 
-def add(a, b):
-    return a + b
+app = Flask(__name__)
 
-print(add(2,3))
+@app.route("/")
+def home():
+    return "Hello from DevOps Pipeline!"
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)
