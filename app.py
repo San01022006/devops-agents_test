@@ -1,7 +1,13 @@
-from fastapi import FastAPI
+from flask import Flask
 
-app = FastAPI()
+app = Flask(__name__)
 
-@app.get("/")
+def add(a, b):
+    return a + b
+
+@app.route("/")
 def home():
-    return {"message": "Hello from DevOps Pipeline"}
+    return "Hello from DevOps Pipeline!"
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)
