@@ -1,13 +1,10 @@
-from flask import Flask
+from fastapi import FastAPI
 
-app = Flask(__name__)
+app = FastAPI()
 
 def add(a, b):
     return a + b
 
-@app.route("/")
+@app.get("/")
 def home():
-    return "Hello from DevOps Pipeline!"
-
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
+    return {"message": "DevOps Pipeline Working!"}
